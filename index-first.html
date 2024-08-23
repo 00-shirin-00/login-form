@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>first big proje</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Login Form Using HTML CSS</title>
     <!-- css files  -->
-     <link rel="stylesheet" href="style-first.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style-first.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="">
+        <h2>Login</h2>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="mail"></ion-icon>
+          </span>
+          <input type="email" name="" id="" required />
+          <label for="">email</label>
+        </div>
 
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="lock-closed"></ion-icon>
+          </span>
+          <input type="password" name="" id="" required />
+          <label for="">password</label>
+        </div>
+
+        <div class="remember-forget">
+          <label>
+            <input type="checkbox" name="" id="" />
+            remeber me
+          </label>
+          <a href="#">forget password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <div class="register-link">
+          <p>Don't an account?<a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
     <!-- script files  -->
     <script src="script-first.js"></script>
-</body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
 </html>
