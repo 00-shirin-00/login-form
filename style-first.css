@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --color-1-1f1f47: #1f2c47;
+  --color-opaque: rgba(255, 255, 255, 0.15);
+  --color-3: rgba(31, 38, 135, 0.37);
+  --color-lightWhit: rgba(255, 255, 255, 0.18);
+  --box-shadow: 0 8px 23px var(--color-3);
+  --color-whit: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-1-1f1f47);
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background-color: var(--color-opaque);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-lightWhit);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  font-size: 2em;
+  color: var(--color-whit);
+  text-align: center;
+}
+.input-box {
+  width: 320px;
+  margin: 30px 0;
+  border-bottom: 2px solid var(--color-whit);
+}
+
+.labl-email {
+  position: absolute;
+  top: 26%;
+  left: 45px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  pointer-events: none;
+  color: var(--color-whit);
+}
+
+.label-pass {
+  position: absolute;
+  top: 45%;
+  left: 45px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  pointer-events: none;
+  color: var(--color-whit);
+}
+/* 
+.input-box input:focus ~ .label-pass,
+.input-box input:valid ~ .label-pass {
+  top: 5px;
+  color: yellow;
+} */
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  color: var(--color-whit);
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 48px;
+  color: var(--color-whit);
+  font-size: 1.2em;
+  line-height: 57px;
+}
+.blob{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(180deg,var(--color-3) 31.77%,var(--color-whit) 100%);
+    transform: translate(-100px,-50px);
+    transition: 1s cubic-bezier(.05,.8,.16,1);
+    border-radius: 30% 70% 70% 30% / 34% 30% 70% 66% ;
+    animation: blobAnime 20s infinite alternate ;
+}
+    
+.remember-forget{
+    display: flex;
+    justify-content: space-evenly;
+}
+.register-link{
+   display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-lightWhit);
+    transition: all .5s;
+    margin-left: 10px;
+}
+a:hover{
+    text-decoration: underline;
+    color: var(--color-whit);
+}
+.remember-forget label input[type=checkbox]{
+    accent-color: rgb(188, 88, 105);
+   
+}
+button{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 40px;
+    margin: 15px 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bolder;
+    background-color: #ffffffba;
+    transition: all .5s;
+}
+button:hover{
+    background-color: #fff;
+
+}
+@keyframes blobAnime{
+    25%{
+        transform: translate(300px,50px) rotate(-10deg);
+
+    }
+    50%{
+        transform: translate(-100px,-250px) rotate(-50deg);
+
+    }
+    75%{
+        transform: translate(-300px,450px) rotate(-100deg);
+
+    }
+    100%{
+        transform: translate(-300px,-350px) rotate(-150deg);
+
+    }
+}
