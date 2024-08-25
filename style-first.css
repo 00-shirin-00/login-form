@@ -82,74 +82,69 @@ h2 {
   font-size: 1.2em;
   line-height: 57px;
 }
-.blob{
-    position: absolute;
-    width: 400px;
-    height: 400px;
-       background: linear-gradient(.25turn,#07886F, 20%, #29344D);
-
-    transform: translate(-100px,-50px);
-    transition: 1s cubic-bezier(.05,.8,.16,1);
-    border-radius: 30% 70% 70% 30% / 34% 30% 70% 66% ;
-    animation: blobAnime 20s infinite alternate ;
-}
-    
-.remember-forget{
-    display: flex;
-    justify-content: space-evenly;
-}
-.register-link{
-   display: flex;
-    justify-content: space-evenly;
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(0.25turn, #07886f, 20%, #29344d);
+  transform: translate(-100px, -50px);
+  transition: 1s cubic-bezier(0.05, 0.8, 0.16, 1);
+  border-radius: 30% 70% 70% 30% / 34% 30% 70% 66%;
+  animation: blobAnime 20s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a{
-    text-decoration: none;
-    color: var(--color-lightWhit);
-    transition: all .5s;
-    margin-left: 10px;
+.remember-forget {
+  display: flex;
+  justify-content: space-evenly;
 }
-a:hover{
-    text-decoration: underline;
-    color: var(--color-whit);
+.register-link {
+  display: flex;
+  justify-content: space-evenly;
 }
-.remember-forget label input[type=checkbox]{
-    accent-color: #01C29D;
-    
-   
+
+a {
+  text-decoration: none;
+  color: var(--color-lightWhit);
+  transition: all 0.5s;
+  margin-left: 10px;
 }
-button{
-    width: 100%;
-    height: 45px;
-    border: none;
-    border-radius: 40px;
-    margin: 15px 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bolder;
-    background-color: #ffffffba;
-    transition: all .5s;
+a:hover {
+  text-decoration: underline;
+  color: var(--color-whit);
 }
-button:hover{
-    background-color: #fff;
-
+.remember-forget label input[type="checkbox"] {
+  accent-color: #01c29d;
 }
-@keyframes blobAnime{
-    25%{
-        transform: translate(300px,50px) rotate(-10deg);
-
-    }
-    50%{
-        transform: translate(-100px,-250px) rotate(-50deg);
-
-    }
-    75%{
-        transform: translate(-300px,450px) rotate(-100deg);
-
-    }
-    100%{
-        transform: translate(-300px,-350px) rotate(-150deg);
-
-    }
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 40px;
+  margin: 15px 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bolder;
+  background-color: #ffffffba;
+  transition: all 0.5s;
+}
+button:hover {
+  background-color: #fff;
+}
+@keyframes blobAnime {
+  25% {
+    transform: translate(300px, 50px) rotate(-10deg);
+  }
+  50% {
+    transform: translate(-100px, -250px) rotate(-50deg);
+  }
+  75% {
+    transform: translate(-300px, 450px) rotate(-100deg);
+  }
+  100% {
+    transform: translate(-300px, -350px) rotate(-150deg);
+  }
 }
