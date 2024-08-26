@@ -9,7 +9,7 @@ console.log(blobEl);
 loginformEl.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://fakestoreapi.com/auth/login", {
+      const res = await fetch(`https://fakestoreapi.com/auth/login`, {
         method: "POST",
         body: JSON.stringify({
           username: emailInput.value,
@@ -17,7 +17,11 @@ loginformEl.addEventListener('submit', async (e) => {
         }),
       });
         // creat json file from data for use that >>
-        const data = await res.json()
+      const data = await res.json()
+      loginformEl.classList.add("hide")
+      blobEl.textContent = data.token
         
-    }catch(err){}
+    } catch (err) {
+      alert('noooooooooooooooooooooo')
+    }
 })
