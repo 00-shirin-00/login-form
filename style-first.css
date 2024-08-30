@@ -6,6 +6,7 @@
   --color-lightWhit: rgba(255, 255, 255, 0.18);
   --box-shadow: 0 8px 23px var(--color-3);
   --color-whit: #fff;
+  --blobBgc: linear-gradient(0.25turn, #07886f, 20%, #29344d);
 }
 
 * {
@@ -40,53 +41,86 @@ h2 {
   color: var(--color-whit);
   text-align: center;
 }
-.input-box {
-  width: 320px;
-  margin: 30px 0;
-  border-bottom: 2px solid var(--color-whit);
+
+.inputBox {
+  height: 60px;
+  position: relative;
+  width: 250px;
+  margin: 20px;
 }
 
-.labl-email {
-  position: absolute;
-  top: 26%;
-  left: 45px;
-  transform: translateY(-50%);
-  font-size: 1em;
-  pointer-events: none;
-  color: var(--color-whit);
-}
-
-.label-pass {
-  position: absolute;
-  top: 45%;
-  left: 45px;
-  transform: translateY(-50%);
-  font-size: 1em;
-  pointer-events: none;
-  color: var(--color-whit);
-}
-.input-box input {
+.inputBox input {
   width: 100%;
-  height: 50px;
-  background-color: transparent;
+  padding: 10px;
   outline: none;
   border: none;
+  color: #000;
   font-size: 1em;
-  color: var(--color-whit);
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
 }
 
-.input-box .icon {
+.inputBox span {
+  margin-top: 5px;
   position: absolute;
-  right: 48px;
-  color: var(--color-whit);
-  font-size: 1.2em;
-  line-height: 57px;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
 }
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.enter {
+  height: 45px;
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 3em;
+}
+
+.enter:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
 .blob {
   position: absolute;
   width: 400px;
   height: 400px;
-  background: linear-gradient(0.25turn, #07886f, 20%, #29344d);
+  /* background: linear-gradient(0.25turn, #07886f, 20%, #29344d); */
+  background: var(--blobBgc);
   transform: translate(-100px, -50px);
   transition: 1s cubic-bezier(0.05, 0.8, 0.16, 1);
   border-radius: 30% 70% 70% 30% / 34% 30% 70% 66%;
@@ -115,7 +149,7 @@ a:hover {
   text-decoration: underline;
   color: var(--color-whit);
 }
-.remember-forget input#remember{
+.remember-forget input#remember {
   accent-color: #01c29d;
 }
 button {
@@ -134,6 +168,56 @@ button {
 button:hover {
   background-color: #fff;
 }
+
+.checkbox-wrapper-25 {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"] {
+  background-image: -webkit-linear-gradient(
+      hsla(0, 0%, 0%, 0.1),
+      hsla(0, 0%, 100%, 0.1)
+    ),
+    -webkit-linear-gradient(left, #29344d 50%, #07886f 50%);
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 15px 0;
+  border-radius: 25px;
+  box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 10px hsla(0, 0%, 0%, 0.5), 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+    0 -1px 2px 2px hsla(0, 0%, 0%, 0.25), 0 2px 2px 2px hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  height: 25px;
+  padding-right: 25px;
+  width: 75px;
+  appearance: none;
+  transition: 0.25s;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"]:after {
+  background-color: #eee;
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 100%, 0.1),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  border-radius: 25px;
+  box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1),
+    inset 0 -1px 1px 1px hsla(0, 0%, 0%, 0.25),
+    0 1px 3px 1px hsla(0, 0%, 0%, 0.5), 0 0 2px hsla(0, 0%, 0%, 0.25);
+  content: "";
+  display: block;
+  height: 25px;
+  width: 50px;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"]:checked {
+  background-position: 0 0, 35px 0;
+  padding-left: 25px;
+  padding-right: 0;
+}
+/* end btn change theme color */
+
 @keyframes blobAnime {
   25% {
     transform: translate(300px, 50px) rotate(-10deg);
@@ -148,6 +232,6 @@ button:hover {
     transform: translate(-300px, -350px) rotate(-150deg);
   }
 }
-.hide{
+.hide {
   display: none;
 }
